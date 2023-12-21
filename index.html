@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Splitter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1 style="text-align: center; color: #fff;">URL Splitter</h1>
+
+   <div id="bg1" style="display: flex; justify-content: center;">
+    <label for="urlInput">Enter URL:</label>
+    <input type="text" id="urlInput" placeholder="e.g., https://www.example.com/path/to/resource">
+
+    <button onclick="splitURL()">Split URL</button>
+
+   </div>
+    <div id="resultContainer">
+        <!-- Display URL components here -->
+    </div>
+
+    <script>
+        function splitURL() {
+            const urlInput = document.getElementById('urlInput').value;
+            const url = new URL(urlInput);
+
+            const resultContainer = document.getElementById('resultContainer');
+            resultContainer.innerHTML = `
+                <div class="frand">
+                    <h2>URL Components:</h2>
+                <p><strong>Protocol:</strong> ${url.protocol}</p>
+                <p><strong>Hostname:</strong> ${url.hostname}</p>
+                <p><strong>Path:</strong> ${url.pathname}</p>
+                <p><strong>Query Parameters:</strong> ${url.search}</p>
+                <p><strong>Hash:</strong> ${url.hash}</p>
+                </div>
+            `;
+        }
+    </script>
+
+</body>
+</html>

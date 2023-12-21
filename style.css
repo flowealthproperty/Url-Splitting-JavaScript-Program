@@ -1,0 +1,12 @@
+body{
+background: rgb(255, 182, 47);
+color: #fff;
+}
+.frand{
+    background: #fff;
+    color: #000;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    padding: 10px;
+}
